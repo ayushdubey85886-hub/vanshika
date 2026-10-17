@@ -1,0 +1,143 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+  background: #16091b;
+  font-family: Arial, sans-serif;
+}
+
+/* Background image */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+
+  background:
+    linear-gradient(
+      rgba(20, 5, 25, 0.35),
+      rgba(20, 5, 25, 0.55)
+    ),
+    url("images/kareja-background.jpeg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Keep content above the sprinkles */
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heart sprinkles */
+.heart-sprinkles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.heart-sprinkles span {
+  position: absolute;
+  bottom: -40px;
+  color: #ff8acb;
+  opacity: 0;
+  text-shadow:
+    0 0 8px #ff65b5,
+    0 0 18px #d64cff;
+  animation: float-heart linear infinite;
+}
+
+.heart-sprinkles span:nth-child(1) {
+  left: 8%;
+  font-size: 20px;
+  animation-duration: 9s;
+  animation-delay: 0s;
+}
+
+.heart-sprinkles span:nth-child(2) {
+  left: 22%;
+  font-size: 14px;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.heart-sprinkles span:nth-child(3) {
+  left: 39%;
+  font-size: 24px;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+.heart-sprinkles span:nth-child(4) {
+  left: 56%;
+  font-size: 17px;
+  animation-duration: 13s;
+  animation-delay: 4s;
+}
+
+.heart-sprinkles span:nth-child(5) {
+  left: 72%;
+  font-size: 22px;
+  animation-duration: 11s;
+  animation-delay: 2s;
+}
+
+.heart-sprinkles span:nth-child(6) {
+  left: 90%;
+  font-size: 16px;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.7);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.9;
+  }
+
+  85% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-115vh) rotate(35deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    background-position: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart-sprinkles span {
+    animation: none;
+    opacity: 0.6;
+  }
+}
