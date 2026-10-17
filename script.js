@@ -9,7 +9,6 @@ const musicBtn=document.getElementById('musicBtn');
 musicBtn.addEventListener('click',()=>{const label=document.getElementById('musicLabel');const isOn=label.textContent==='Gaana chalu hai';label.textContent=isOn?'Gaana band hai':'Gaana chalu hai';showToast(isOn?'Gaana band kar diya.':'Gaana bajane ke liye apni pasand ka gaana jodna hoga. 🎵')});
 function showToast(message){const toast=document.getElementById('toast');toast.textContent=message;toast.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>toast.classList.remove('show'),3200)}
 document.getElementById('headerShareBtn').addEventListener('click',async()=>{const shareData={title:'Kareja ♡',text:'Kareja, tumhare liye ek chhota sa tohfa hai. ❤️',url:location.href};try{if(navigator.share)await navigator.share(shareData);else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);showToast('Tohfe ka link nakal ho gaya! ❤️')}else showToast('Upar dikh raha pata nakal karke bhej do. ❤️')}catch(e){if(e.name!=='AbortError')showToast('Link nakal karke WhatsApp par bhej do. ❤️')}});
-
 const music = document.getElementById("backgroundMusic");
 
 if (music) {
