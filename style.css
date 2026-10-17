@@ -1,0 +1,332 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --pink: #ff72b6;
+  --purple: #c58aff;
+  --white: #fff5fb;
+  --muted: #e7cddd;
+  --glass: rgba(28, 10, 31, 0.68);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--white);
+  background: #100816;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 76px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(15, 5, 19, 0.55);
+  border-bottom: 1px solid rgba(255, 146, 210, 0.15);
+  backdrop-filter: blur(14px);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--pink);
+  text-shadow: 0 0 14px var(--pink);
+}
+
+.nav-link {
+  color: #ffe0f0;
+  font-size: 0.92rem;
+}
+
+.nav-link:hover {
+  color: var(--pink);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  padding: 125px 22px 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(14, 5, 18, 0.48), rgba(17, 5, 22, 0.80)),
+    url("images/kareja-background.jpeg") center 40% / cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at center, rgba(137, 44, 121, 0.22), transparent 65%),
+    linear-gradient(90deg, rgba(13, 4, 17, 0.35), transparent, rgba(13, 4, 17, 0.35));
+}
+
+.hero-content {
+  width: min(760px, 100%);
+  animation: riseIn 1.1s ease both;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: #ffc0df;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5.2rem);
+  line-height: 1.15;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
+}
+
+h1 span {
+  display: inline-block;
+  color: #ff9bc9;
+  text-shadow: 0 0 25px rgba(255, 92, 174, 0.6);
+}
+
+.hero-text {
+  max-width: 560px;
+  margin: 24px auto 30px;
+  color: #fff0f8;
+  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  line-height: 1.9;
+  text-shadow: 0 2px 12px #160719;
+}
+
+.music-button,
+.love-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin: 7px;
+  padding: 13px 22px;
+  border: 1px solid rgba(255, 202, 233, 0.5);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.music-button {
+  color: #fff;
+  background: linear-gradient(135deg, #a63f91, #e65e9e);
+  box-shadow: 0 0 22px rgba(226, 76, 159, 0.3);
+}
+
+.love-button {
+  color: #fff4fb;
+  background: rgba(35, 12, 43, 0.68);
+}
+
+.music-button:hover,
+.love-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 28px rgba(255, 114, 182, 0.42);
+}
+
+.heart-decoration {
+  margin-top: 30px;
+  color: #ff80bc;
+  font-size: 2.4rem;
+  text-shadow: 0 0 14px #ff5eae, 0 0 40px #c44dff;
+  animation: heartbeat 1.7s ease-in-out infinite;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  width: max-content;
+  max-width: 90%;
+  transform: translateX(-50%);
+  color: #ffe0f0;
+  font-size: 0.85rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+.letter-section {
+  position: relative;
+  padding: 90px 20px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at top, rgba(109, 39, 105, 0.24), transparent 60%),
+    #100816;
+}
+
+.letter-section h2 {
+  margin-bottom: 30px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #ffd6e9;
+}
+
+.letter-card {
+  width: min(700px, 100%);
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 46px);
+  border: 1px solid rgba(255, 139, 202, 0.3);
+  border-radius: 24px;
+  background: var(--glass);
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.24),
+              0 0 35px rgba(211, 94, 186, 0.08);
+  text-align: left;
+}
+
+.letter-card p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.letter-card p:first-child {
+  color: #ffb9dc;
+  font-weight: 700;
+}
+
+.letter-card .signature {
+  margin-top: 28px;
+  margin-bottom: 0;
+  color: #ffb9dc;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+}
+
+.ending {
+  margin-top: 34px;
+  color: #ffacd4;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+}
+
+.footer {
+  padding: 27px 20px;
+  border-top: 1px solid rgba(255, 146, 210, 0.15);
+  background: #0b050f;
+  color: #dcbdd1;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-heart {
+  margin-top: 8px;
+  color: #ff8fc7;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.17); }
+}
+
+@keyframes float {
+  0%, 100% { margin-bottom: 0; }
+  50% { margin-bottom: 7px; }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    min-height: 68px;
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 1.08rem;
+  }
+
+  .nav-link {
+    max-width: 130px;
+    font-size: 0.78rem;
+    text-align: right;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 115px 20px 85px;
+    background-position: center center;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 2.5px;
+  }
+
+  .hero-text {
+    line-height: 1.75;
+  }
+
+  .music-button,
+  .love-button {
+    width: min(270px, 100%);
+    margin: 7px 0;
+  }
+
+  .letter-section {
+    padding: 70px 16px;
+  }
+
+  .letter-card {
+    border-radius: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
