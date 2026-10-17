@@ -1,26 +1,26 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🎵 Background music
+  // 🎵 BACKGROUND MUSIC
   const music = document.getElementById("backgroundMusic");
   const musicBtn = document.getElementById("musicBtn");
   const musicLabel = document.getElementById("musicLabel");
 
   if (music && musicBtn && musicLabel) {
     music.volume = 0.55;
-    musicLabel.textContent = "Gaana chalu karo";
 
     musicBtn.addEventListener("click", async () => {
       if (music.paused) {
+        musicLabel.textContent = "Gaana load ho raha hai...";
+
         try {
           await music.play();
           musicLabel.textContent = "Gaana band karo";
         } catch (error) {
-          musicLabel.textContent = "Dobara koshish karo";
-          console.error("Music play error:", error);
+          console.error("Music error:", error);
+          musicLabel.textContent = "Dobara try karo 💗";
         }
       } else {
         music.pause();
-        musicLabel.textContent = "Gaana chalu karo";
       }
     });
 
@@ -33,70 +33,76 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     music.addEventListener("error", () => {
-      musicLabel.textContent = "Gaana nahi mila 💔";
-      console.error("MP3 load nahi hui. File path check karo.");
+      musicLabel.textContent = "Music file nahi mili";
+      console.error("MP3 file load nahi hui.");
     });
   }
 
-  // 💗 Surprise button
+  // 💗 SURPRISE MESSAGE
   const heartBtn = document.getElementById("heartBtn");
   const heartMessage = document.getElementById("heartMessage");
 
   const messages = [
-    "Kareja, tum meri life ka sabse pyaara hissa ho. 💗",
-    "Tumhari smile mera favourite view hai. 🌸",
-    "Doori chahe jitni ho, tum mere dil ke kareeb ho. 💕",
-    "Tumhare saath har chhoti si baat bhi special lagti hai. ✨",
-    "Kareja, tum hamesha khush raho — bas yahi wish hai. 🫶",
-    "Tum meri favourite notification ho. 💌"
+    "Kareja, tum meri zindagi ka bahut pyaara hissa ho. 💗",
+    "Tumhari muskaan mere din ko khaas bana deti hai. 🌸",
+    "Tumhari khushi mere liye bahut maayne rakhti hai. 💕",
+    "Tumhare saath bitaya har pal yaadgaar hai. ✨",
+    "Kareja, tum jaisi ho, waise hi bahut anmol ho. ❤️",
+    "Tumhare sapne hamesha poore hon aur tum muskurati raho. 🫶",
+    "Meri taraf se tumhare liye ek badi si virtual jhappi. 💖"
   ];
 
   let lastMessage = -1;
 
   if (heartBtn && heartMessage) {
     heartBtn.addEventListener("click", () => {
-      let randomIndex;
+      let index;
 
       do {
-        randomIndex = Math.floor(Math.random() * messages.length);
-      } while (messages.length > 1 && randomIndex === lastMessage);
+        index = Math.floor(Math.random() * messages.length);
+      } while (index === lastMessage);
 
-      lastMessage = randomIndex;
-      heartMessage.textContent = messages[randomIndex];
+      lastMessage = index;
+      heartMessage.textContent = messages[index];
+
       heartMessage.classList.remove("show");
-
-      requestAnimationFrame(() => {
-        heartMessage.classList.add("show");
-      });
+      void heartMessage.offsetWidth;
+      heartMessage.classList.add("show");
 
       createHearts(12);
     });
   }
 
-  // 💕 Floating hearts
-  function createHearts(amount = 1) {
-    for (let i = 0; i < amount; i++) {
+  // ✨ FLOATING HEARTS
+  function createHearts(count = 1) {
+    for (let i = 0; i < count; i++) {
       const heart = document.createElement("span");
+
       heart.className = "floating-heart";
       heart.textContent = ["💗", "💖", "💕", "❤️", "✨"][
         Math.floor(Math.random() * 5)
       ];
 
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = 14 + Math.random() * 22 + "px";
+      heart.style.fontSize = 14 + Math.random() * 20 + "px";
       heart.style.animationDuration = 3 + Math.random() * 4 + "s";
-      heart.style.setProperty("--drift", (Math.random() * 120 - 60) + "px");
+      heart.style.setProperty(
+        "--drift",
+        Math.random() * 100 - 50 + "px"
+      );
 
       document.body.appendChild(heart);
 
-      setTimeout(() => heart.remove(), 7500);
+      setTimeout(() => {
+        heart.remove();
+      }, 7500);
     }
   }
 
-  // Hearts appear occasionally
+  // Har 2 second mein ek floating heart
   setInterval(() => {
     if (document.visibilityState === "visible") {
       createHearts(1);
     }
-  }, 1800);
+  }, 2000);
 });
