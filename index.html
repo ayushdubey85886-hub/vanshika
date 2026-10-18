@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -9,8 +10,9 @@
 </head>
 <body>
 
-  <audio id="backgroundMusic" loop preload="auto">
+  <audio id="backgroundMusic" loop preload="none">
     <source src="./vaanroon-forever.mp3" type="audio/mpeg">
+    Your browser does not support audio.
   </audio>
 
   <div class="sparkles" aria-hidden="true"></div>
@@ -27,7 +29,8 @@
     </nav>
 
     <div class="top-actions">
-      <button class="music-btn" id="musicBtn" type="button">
+      <button class="music-btn" id="musicBtn"
+        type="button" aria-pressed="false">
         ♫ <span id="musicLabel">Gaana chalu karo</span>
       </button>
     </div>
@@ -57,7 +60,8 @@
 
     <section class="about section" id="tum">
       <div class="photo-frame">
-        <img src="./kareja-background.jpeg" alt="Kareja ke liye khaas tasveer">
+        <img src="./kareja-background.jpeg"
+          alt="Kareja ke liye khaas tasveer">
         <span class="photo-sticker">Meri sabse pyaari ♡</span>
       </div>
 
@@ -83,3 +87,92 @@
             <p><b>Tumhari Muskaan</b><small>Meri pasandida cheez</small></p>
           </div>
           <div>
+            <span>✧</span>
+            <p><b>Tumhara Dil</b><small>Sabse pyaara</small></p>
+          </div>
+          <div>
+            <span>∞</span>
+            <p><b>Tumhara Saath</b><small>Mera sukoon</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section section" id="dil">
+      <div class="letter-card">
+        <p class="eyebrow">EK CHHOTI SI BAAT...</p>
+        <h2>Meri Kareja Ke Naam 💌</h2>
+
+        <div class="letter-paper">
+          <p>Kareja,</p>
+          <p>
+            Shayad main har baar apne dil ki baat sahi tarah keh nahi paata,
+            lekin tum mere liye bahut khaas ho.
+          </p>
+          <p>
+            Tumhari ek muskaan mera din bana deti hai. Tumse baat karke
+            sukoon milta hai, aur tumhari chhoti-chhoti baatein yaadgaar hain.
+          </p>
+          <p>
+            Main tumhari feelings ki izzat karna, tumhara saath dena
+            aur tumhari khushi ka khayal rakhna chahta hoon.
+          </p>
+          <p>
+            Apni pyaari si muskaan banaye rakhna. Tum jaisi ho,
+            waise hi bahut anmol ho. ❤️
+          </p>
+          <p class="signature">Hamesha tumhara,<br><strong>Ayush ♡</strong></p>
+        </div>
+      </div>
+
+      <div class="heart-side">
+        <div class="big-heart" aria-hidden="true">♥</div>
+        <h2>Meri Duniya Tumse Hai</h2>
+        <p>Har din tumhe khushi ki ek nayi wajah mile. ✨</p>
+
+        <button class="glow-button" id="heartBtn" type="button">
+          Tumhare liye ek chhota sa surprise 💗
+        </button>
+
+        <p class="tiny-note" id="heartMessage" aria-live="polite">
+          Isse kholo, tumhare liye kuch khaas chhupa hai... ♡
+        </p>
+      </div>
+    </section>
+
+    <section class="special section" id="khaas">
+      <p class="eyebrow">EK BAAT HAMESHA YAAD RAKHNA</p>
+      <h2>Tum Bahut Khaas Ho <span>♡</span></h2>
+
+      <div class="special-grid">
+        <article>
+          <span>🌷</span>
+          <h3>Tumhari Khushi</h3>
+          <p>Tumhe haste hue dekhna mujhe sabse achha lagta hai.</p>
+        </article>
+        <article>
+          <span>🌙</span>
+          <h3>Tumhara Sukoon</h3>
+          <p>Umeed hai tum hamesha apnapan mehsoos karo.</p>
+        </article>
+        <article>
+          <span>✨</span>
+          <h3>Tumhare Sapne</h3>
+          <p>Apne sapno ke liye hamesha chamakti raho.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer" id="hamesha">
+      <p class="footer-heart">♡</p>
+      <h2>Hamesha Tumhari Muskaan Ke Liye...</h2>
+      <p>Poore dil se, sirf tumhare liye — Ayush</p>
+      <p class="footer-small">Tum bahut anmol ho. ❤️</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="./script.js?v=3" defer></script>
+</body>
+</html>
