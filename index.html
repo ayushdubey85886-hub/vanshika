@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090510">
-  <meta name="description" content="Kareja ke liye ek chhoti si duniya, pyaari yaadon aur dil ki baaton ke saath.">
   <title>Kareja ♡</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <audio id="backgroundMusic" loop preload="none">
+  <audio id="backgroundMusic" loop preload="auto">
     <source src="./vaanroon-forever.mp3" type="audio/mpeg">
-    Your browser does not support audio playback.
   </audio>
 
   <div class="sparkles" aria-hidden="true"></div>
@@ -21,7 +18,7 @@
   <header class="topbar">
     <a class="brand" href="#shuruaat"><span>♡</span> Kareja</a>
 
-    <nav aria-label="Main navigation">
+    <nav>
       <a href="#shuruaat">Shuruaat</a>
       <a href="#tum">Tum</a>
       <a href="#dil">Dil Ki Baat</a>
@@ -30,8 +27,7 @@
     </nav>
 
     <div class="top-actions">
-      <button class="music-btn" id="musicBtn" type="button"
-              aria-label="Gaana chalu ya band karo">
+      <button class="music-btn" id="musicBtn" type="button">
         ♫ <span id="musicLabel">Gaana chalu karo</span>
       </button>
     </div>
@@ -39,43 +35,29 @@
 
   <main>
     <section class="hero" id="shuruaat">
-      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-shade"></div>
 
       <div class="hero-content">
         <p class="eyebrow">EK CHHOTI SI DUNIYA, SIRF TUMHARE LIYE</p>
-
         <h1>Kareja <span>♡</span></h1>
-
         <p class="hero-line">Tum sirf meri zindagi ka hissa nahi...</p>
         <p class="hero-line">Tum meri poori duniya ho...</p>
         <p class="hero-line">Aur main hamesha tumhara saath dena chahta hoon. 💗</p>
 
         <div class="heart-divider">──── ♥ ────</div>
-
         <a class="glow-button" href="#dil">
           Mere dil ki baat sunogi? <span>➜</span>
         </a>
       </div>
 
-      <p class="side-note left-note">
-        Tumhare bina<br>sab adhoora hai... ♡
-      </p>
-
-      <p class="side-note right-note">
-        Hamesha<br>tumhare saath... ♡
-      </p>
-
+      <p class="side-note left-note">Tumhare bina<br>sab adhoora hai... ♡</p>
+      <p class="side-note right-note">Hamesha<br>tumhare saath... ♡</p>
       <div class="scroll-note">Thoda aur neeche aao... ♡</div>
     </section>
 
     <section class="about section" id="tum">
       <div class="photo-frame">
-        <img
-          src="./kareja-background.jpeg"
-          alt="Kareja ke liye khaas tasveer"
-          loading="lazy"
-          onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing');"
-        >
+        <img src="./kareja-background.jpeg" alt="Kareja ke liye khaas tasveer">
         <span class="photo-sticker">Meri sabse pyaari ♡</span>
       </div>
 
@@ -86,12 +68,10 @@
         <p class="lead">
           Tum meri zindagi ki woh kahani ho, jise main baar-baar jeena chahoon.
         </p>
-
         <p>
           Tumhari hansi mera din achha bana deti hai. Tumhari baatein mere
           chehre par muskaan le aati hain, aur tumhara saath dil ko sukoon deta hai.
         </p>
-
         <p>
           Main chahta hoon tum hamesha khush raho, apne sapne poore karo
           aur kabhi na bhoolo ki tum mere liye kitni khaas ho. 💕
@@ -103,104 +83,3 @@
             <p><b>Tumhari Muskaan</b><small>Meri pasandida cheez</small></p>
           </div>
           <div>
-            <span>✧</span>
-            <p><b>Tumhara Dil</b><small>Sabse pyaara</small></p>
-          </div>
-          <div>
-            <span>∞</span>
-            <p><b>Tumhara Saath</b><small>Mera sukoon</small></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="letter-section section" id="dil">
-      <div class="letter-card">
-        <p class="eyebrow">EK CHHOTI SI BAAT...</p>
-        <h2>Meri Kareja Ke Naam 💌</h2>
-
-        <div class="letter-paper">
-          <p>Kareja,</p>
-
-          <p>
-            Shayad main har baar apne dil ki baat sahi tarah keh nahi paata,
-            lekin tum mere liye bahut khaas ho.
-          </p>
-
-          <p>
-            Tumhari ek muskaan mera din bana deti hai. Tumse baat karke
-            sukoon milta hai, aur tumhari chhoti-chhoti baatein bhi mere
-            liye yaadgaar ban jaati hain.
-          </p>
-
-          <p>
-            Main tumhari feelings ki izzat karna, tumhara saath dena
-            aur tumhari khushi ka khayal rakhna chahta hoon.
-          </p>
-
-          <p>
-            Bas aise hi apni pyaari si muskaan banaye rakhna.
-            Tum jaisi ho, waise hi bahut anmol ho. ❤️
-          </p>
-
-          <p class="signature">
-            Hamesha tumhara,<br>
-            <strong>Ayush ♡</strong>
-          </p>
-        </div>
-      </div>
-
-      <div class="heart-side">
-        <div class="big-heart" aria-hidden="true">♥</div>
-
-        <h2>Meri Duniya Tumse Hai</h2>
-        <p>Har din tumhe muskurane ki ek nayi wajah mile. ✨</p>
-
-        <button class="glow-button" id="heartBtn" type="button">
-          Kareja, tumhare liye ek chhota sa surprise 💗
-        </button>
-
-        <p class="tiny-note" id="heartMessage" aria-live="polite">
-          Isse kholo, tumhare liye kuch khaas chhupa hai... ♡
-        </p>
-      </div>
-    </section>
-
-    <section class="special section" id="khaas">
-      <p class="eyebrow">EK BAAT HAMESHA YAAD RAKHNA</p>
-      <h2>Tum Bahut Khaas Ho <span>♡</span></h2>
-
-      <div class="special-grid">
-        <article>
-          <span>🌷</span>
-          <h3>Tumhari Khushi</h3>
-          <p>Tumhe haste hue dekhna mujhe sabse achha lagta hai.</p>
-        </article>
-
-        <article>
-          <span>🌙</span>
-          <h3>Tumhara Sukoon</h3>
-          <p>Umeed hai mere saath tum hamesha apnapan mehsoos karo.</p>
-        </article>
-
-        <article>
-          <span>✨</span>
-          <h3>Tumhare Sapne</h3>
-          <p>Main chahta hoon tum apne sapno ke liye hamesha chamakti raho.</p>
-        </article>
-      </div>
-    </section>
-
-    <footer class="footer" id="hamesha">
-      <p class="footer-heart">♡</p>
-      <h2>Hamesha Tumhari Muskaan Ke Liye...</h2>
-      <p>Poore dil se, sirf tumhare liye — Ayush</p>
-      <p class="footer-small">Kareja, tum bahut anmol ho. ❤️</p>
-    </footer>
-  </main>
-
-  <div class="toast" id="toast" role="status"></div>
-
-  <script src="./script.js"></script>
-</body>
-</html>
