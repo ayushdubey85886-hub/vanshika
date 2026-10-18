@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090510">
+  <meta name="description" content="Kareja ke liye ek chhoti si duniya, pyaari yaadon aur dil ki baaton ke saath.">
   <title>Kareja ♡</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <audio id="backgroundMusic" loop preload="auto" playsinline>
-    <source src="vaanroon-forever.mp3"
-        type="audio/mpeg">
+  <audio id="backgroundMusic" loop preload="none">
+    <source src="./vaanroon-forever.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
   </audio>
 
   <div class="sparkles" aria-hidden="true"></div>
@@ -20,7 +21,7 @@
   <header class="topbar">
     <a class="brand" href="#shuruaat"><span>♡</span> Kareja</a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="#shuruaat">Shuruaat</a>
       <a href="#tum">Tum</a>
       <a href="#dil">Dil Ki Baat</a>
@@ -29,7 +30,8 @@
     </nav>
 
     <div class="top-actions">
-      <button class="music-btn" id="musicBtn" type="button">
+      <button class="music-btn" id="musicBtn" type="button"
+              aria-label="Gaana chalu ya band karo">
         ♫ <span id="musicLabel">Gaana chalu karo</span>
       </button>
     </div>
@@ -37,7 +39,7 @@
 
   <main>
     <section class="hero" id="shuruaat">
-      <div class="hero-shade"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
 
       <div class="hero-content">
         <p class="eyebrow">EK CHHOTI SI DUNIYA, SIRF TUMHARE LIYE</p>
@@ -68,8 +70,12 @@
 
     <section class="about section" id="tum">
       <div class="photo-frame">
-        <img src="kareja-background.jpeg"
-     alt="Kareja ke liye khaas tasveer">
+        <img
+          src="./kareja-background.jpeg"
+          alt="Kareja ke liye khaas tasveer"
+          loading="lazy"
+          onerror="this.style.display='none'; this.parentElement.classList.add('photo-missing');"
+        >
         <span class="photo-sticker">Meri sabse pyaari ♡</span>
       </div>
 
@@ -96,12 +102,10 @@
             <span>♡</span>
             <p><b>Tumhari Muskaan</b><small>Meri pasandida cheez</small></p>
           </div>
-
           <div>
             <span>✧</span>
             <p><b>Tumhara Dil</b><small>Sabse pyaara</small></p>
           </div>
-
           <div>
             <span>∞</span>
             <p><b>Tumhara Saath</b><small>Mera sukoon</small></p>
@@ -197,6 +201,6 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
