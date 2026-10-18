@@ -65,16 +65,28 @@ function showToast(message) {
 // Music: phone par user ke tap ke baad play karne ki koshish
 const music = document.getElementById("backgroundMusic");
 
-if (music) {
+const music = document.getElementById("backgroundMusic");
+const musicBtn = document.getElementById("musicBtn");
+const musicLabel = document.getElementById("musicLabel");
+
+if (music && musicBtn) {
   music.volume = 0.55;
 
-  async function playMusic() {
+  musicBtn.addEventListener("click", async () => {
     try {
-      await music.play();
+      if (music.paused) {
+        await music.play();
+        musicLabel.textContent = "Gaana band karo";
+      } else {
+        music.pause();
+        musicLabel.textContent = "Gaana chalu karo";
+      }
     } catch (error) {
-      console.log("Gaana chalane ke liye dobara tap karo.");
+      musicLabel.textContent = "Dobara tap karo";
     }
-  }
+  });
 
-  document.addEventListener("pointerdown", playMusic, { once: true });
+  music.addEventListener("ended", () => {
+    musicLabel.textContent = "Gaana chalu karo";
+  });
 }
